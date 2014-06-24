@@ -1,0 +1,26 @@
+{
+	"name": "html2node",
+	"title": "html2node",
+	"description": "Covert html string to DOM node",
+	"version": "0.0.1",
+	"author": {
+		"name": "zjuwwq"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/zjuwwq/html2node.git"
+	},
+	"licenses": [{
+		"type": "MIT",
+		"url": "https://github.com/zjuwwq/html2node/blob/master/LICENSE"
+	}],
+	"scripts": {
+		"test": "karma start test/karma.conf.js"
+	},
+	"dependencies": {},
+	"devDependencies": {
+		"karma": "~0.10",
+		"karma-safari-launcher": "~0.1",
+    	"karma-ie-launcher": "~0.1"
+	}
+}
