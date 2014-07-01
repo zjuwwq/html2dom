@@ -1,6 +1,6 @@
 (function(window, document) {
 	var div = document.createElement('div'),
-		tagRegex = /^<\s*(\w+)(?:\s+[^>]+)?\s*>/;
+		tagRegex = /^<\s*(\w+)(?:\s+[^>]+)?\s*\/?\s*>/;
 
 	// Make sure that link elements get serialized correctly by innerHTML
 	// This requires a wrapper element in IE
@@ -33,7 +33,7 @@
 	wrapMap.th = wrapMap.td;
 	
 
-	function html2node(str) {
+	function html2dom(str) {
 		if (typeof str !== 'string') return str;
 		var originStr = str;
 		str = str.replace(/^\s+|\s+$/g, '');
@@ -41,6 +41,7 @@
 			match = str.match(tagRegex),
 			tagName = match && match[1] && match[1].toLowerCase(),
 			wrap = wrapMap[tagName] || wrapMap._default,
+			level,
 			node,
 			nodeList = [],
 			childNodes;
@@ -73,14 +74,14 @@
 	}
 	// support node module, amd module
 	if (typeof module === 'object' && typeof exports === 'object' && exports === module.exports) {
-		module.exprts = html2node;
+		module.exports = html2dom;
 	} else {
 		if (typeof define === 'function' && define.amd) {
 			define([], function() {
-				return html2node;
+				return html2dom;
 			});
 		} else {
-			window.html2node = html2node;
+			window.html2dom = html2dom;
 		}
 	}
 })(window, document);
