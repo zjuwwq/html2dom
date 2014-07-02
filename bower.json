@@ -1,0 +1,23 @@
+{
+  "name": "html2dom",
+  "version": "0.0.1",
+  "description": "Covert html string to DOM node",
+  "author": "https://github.com/zjuwwq/html2dom/graphs/contributors",
+  "license": "MIT",
+  "homepage": "https://github.com/zjuwwq/html2dom",
+  "main": "./html2dom.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components",
+    "bower_components",
+    "test*",
+    "demo*",
+    "gruntFile.js",
+    "package.json"
+  ],
+  "dependencies": {
+  },
+  "devDependencies": {
+  }
+}
